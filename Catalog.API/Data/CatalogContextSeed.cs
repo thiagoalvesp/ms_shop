@@ -17,7 +17,24 @@ namespace Catalog.API.Data
 
         private static IEnumerable<Product> GetMyProducts()
         {
-            throw new NotImplementedException();
+            return new List<Product>(){
+                new Product(){
+                    Id = "e994c33cf0a14f3d9ed96131",
+                    Name = "Caderno Espiral Pequeno",
+                    Description = "Caderno espiral com 100 folhas pequeno",
+                    Image = "caderno.png",
+                    Price = 7.65M,
+                    Category = "MaterialEscolar"
+                },
+                new Product(){
+                    Id = "e994c33cf0a14f3d9ed96132",
+                    Name = "Borracha branca pequena",
+                    Description = "Borracha branca pequena para lápis",
+                    Image = "borracha.png",
+                    Price = 4.65M,
+                    Category = "MaterialEscolar"
+                }
+            };
         }
     }
 }
