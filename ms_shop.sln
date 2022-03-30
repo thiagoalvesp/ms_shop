@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{09F7EA40-9896-4612-BC2D-88A4561FD122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Basket.API\Basket.API.csproj", "{AAA756E3-2E5A-4448-A71D-C1290E41863E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{09F7EA40-9896-4612-BC2D-88A4561FD122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09F7EA40-9896-4612-BC2D-88A4561FD122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09F7EA40-9896-4612-BC2D-88A4561FD122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA756E3-2E5A-4448-A71D-C1290E41863E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA756E3-2E5A-4448-A71D-C1290E41863E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA756E3-2E5A-4448-A71D-C1290E41863E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA756E3-2E5A-4448-A71D-C1290E41863E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
