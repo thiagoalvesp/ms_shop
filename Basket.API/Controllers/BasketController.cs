@@ -32,7 +32,7 @@ namespace Basket.API.Controllers
         }
 
 
-        [HttpGet("{userName}", Name ="DeleteBasket")]
+        [HttpDelete("{userName}", Name ="DeleteBasket")]
         public async Task<ActionResult<ShoppingCart>> DeleteBasket(string userName)
         {
             await _repository.DeleteBasket(userName);
