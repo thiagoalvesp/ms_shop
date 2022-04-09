@@ -30,6 +30,12 @@ services:
     build:
       context: .
       dockerfile: Discount.API/Dockerfile
+  
+  discount.grpc:
+    image: ${DOCKER_REGISTRY-}discountgrpc
+    build:
+      context: .
+      dockerfile: Discount.GRPC/Dockerfile
 
 volumes:
   mongo_data:
