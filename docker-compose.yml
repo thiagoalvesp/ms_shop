@@ -31,11 +31,23 @@ services:
       context: .
       dockerfile: Discount.API/Dockerfile
   
-  discount.grpc:
+  discountgrpc:
     image: ${DOCKER_REGISTRY-}discountgrpc
     build:
       context: .
       dockerfile: Discount.GRPC/Dockerfile
+  
+  prometheus:
+    build: 
+      context: ./prometheus
+      dockerfile: Dockerfile
+      args:
+        version: 1
+    image:  ${DOCKER_REGISTRY-}prometheus
+    restart: always
+    ports:
+      - 9090:9090
+    
 
 volumes:
   mongo_data:

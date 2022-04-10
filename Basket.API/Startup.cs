@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Grpc.Core;
+using Prometheus;
 
 namespace Basket.API
 {
@@ -62,6 +63,23 @@ namespace Basket.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Basket.API v1"));
             }
+
+            /* Prometheus Config */
+            var counter = Metrics.CreateCounter("webapimetric", "Counts requests to the WebApiMetrics API endpoints",
+            new CounterConfiguration{
+                LabelNames = new[] {"method", "endpoint"}
+            });
+
+            app.Use((context, next) => 
+            {
+                counter.WithLabels(context.Request.Method, context.Request.Path).Inc();
+                return next();
+            });
+
+
+            /* Prometheus middleware */
+            app.UseMetricServer();
+            app.UseHttpMetrics();
 
             app.UseRouting();
 
