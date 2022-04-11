@@ -47,6 +47,18 @@ services:
     restart: always
     ports:
       - 9090:9090
+
+  grafana:
+    build:
+      context: ./grafana
+      dockerfile: Dockerfile
+      args:
+        version: 1
+    image: ${DOCKER_REGISTRY-}grafana
+    restart: always
+    ports:
+      - 3000:3000
+
     
 
 volumes:

@@ -1,0 +1,26 @@
+notifiers:
+  - name: ms-shop-notification
+    type: teams
+    uid:  ms-shop-alerts-grafana
+    org_name: Main Org.
+    is_default: true
+    send_reminder: true
+    frequency: 15h
+    disable_resolve_message: false
+    # See 'Supported Settings' section for settings supported for each
+    # alert notification type
+    settings:
+      recipient: "XXX"
+      uploadImage: true
+      token: "xoxb" # legacy setting since Grafana v7,2
+      url: url-do-web-hook-por-exemplo-microsoft-teams
+
+      #Secure setings that will be encrypted in the database
+      secure_settings:
+        token: "xoxb"
+        url: url-do-web-hook-por-exemplo-microsoft-teams
+
+delete_notifiers:
+  - name: ms-shop-notification
+    uid:  ms-shop-alerts-grafana
+    org_name: Main Org.

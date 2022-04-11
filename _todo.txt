@@ -1,0 +1,15 @@
+1 - configurar o prometheus no catalog.api, discount.api e discount.grpc
+2 - configurar o grafana para apresentar os dados de catalog.api, discount.api e discount.grpc
+3 - configurar o grafana para persistir o dashboard
+4 - configurar o prometheus para coletar os dados dos containers
+5 - ajustar o dash do grafana
+
+6 - configurar o fluentD e as aplicações para enviar os logs
+
+a - configurar o ocelot (api gateway)
+
+b1 - criar o order.api (olhar o repo da ms)
+b2 - configurar o uso auto da aplicação Jmeter?
+
+c - subir tudo no ks8
+d - subir na aws (alterando alguns serviços para stack da aws)
