@@ -58,6 +58,23 @@ services:
     restart: always
     ports:
       - 3000:3000
+  
+  fluentd:
+    container_name: fluentd
+    user: root
+    build:
+      context: ./fluentd
+    image: fluentd
+    ports:
+      - 24224:24224
+    depends_on:
+      - catalogdb
+    volumes:
+      - /var/lib/docker/containers:/fluentd/log/containers
+      - ./fluentd/configurations:/fluentd/etc
+      - ./fluentd/logs:/output
+    logging:
+      driver: local
 
     
 

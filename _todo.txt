@@ -5,6 +5,7 @@
 5 - ajustar o dash do grafana
 
 6 - configurar o fluentD e as aplicações para enviar os logs
+criar uma base mongo somente para isso
 
 a - configurar o ocelot (api gateway)
 
