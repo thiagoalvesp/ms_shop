@@ -6,6 +6,7 @@
 
 6 - configurar o fluentD e as aplicações para enviar os logs
 criar uma base mongo somente para isso
+testar as tags por aplicativo
 
 a - configurar o ocelot (api gateway)
 

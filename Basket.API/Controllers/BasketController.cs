@@ -4,6 +4,7 @@ using Basket.API.Entities;
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Basket.API.Controllers
 {
@@ -11,18 +12,26 @@ namespace Basket.API.Controllers
     [ApiController]
     public class BasketController : ControllerBase
     {
+
+        private readonly ILogger<BasketController> _logger;
         private readonly IBasketRepository _repository;
         private readonly DiscountGrpcService _discountGrpcService;
 
-        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService = null)
+        public BasketController(IBasketRepository repository, ILogger<BasketController> logger, DiscountGrpcService discountGrpcService = null)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _logger = logger;
             _discountGrpcService = discountGrpcService;
+
+            _logger.LogInformation("NLog injected into BasketController");
         }
 
         [HttpGet("{userName}", Name ="GetBasket")]
         public async Task<ActionResult<ShoppingCart>> GetBasket(string userName)
         {
+
+            _logger.LogInformation($"GetBasket called with userName:{userName}");
+
             var basket = await _repository.GetBasket(userName);
 
             return Ok(basket ?? new ShoppingCart(userName));
